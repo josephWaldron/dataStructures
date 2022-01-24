@@ -8,10 +8,12 @@
 *************************************************************************/
 package Hw1oop;
 
-enum Color{
-    WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
-}
+
 public class Cat {
+    public enum Color{
+        WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
+    }
+    
     //data fields
     String name;
     double age;     //in years
