@@ -12,15 +12,15 @@ public class Cat {
     static int numberOfCats;
 
     //constructors
-    Cat(){}
-    Cat(String name){
+    public Cat(){}
+    public Cat(String name){
         this.name = name;
     }
-    Cat(String name, String breed){
+    public Cat(String name, String breed){
         this.name = name;
         System.out.println(breed);
     }
-    Cat(String name, double age, Color color, String type){
+    public Cat(String name, double age, Color color, String type){
         this.name = name;
         this.age = age;
         this.color = color;
