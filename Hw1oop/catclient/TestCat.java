@@ -14,5 +14,11 @@ public class TestCat {
     public static void main(String[] args) {
         Cat prince = new Cat("Prince", 0.8, Color.LAVENDER, "domestic");
         Cat betty = new Cat("Betty", 0.25, Color.RED, "domestic");
+        Cat jimmy = new Cat("Jimmy");
+        Cat carl = new Cat("Carl", "tabby");
+        Cat[] catList = {prince, betty, jimmy, carl};
+        for(Cat cat : catList){
+            System.out.println(cat.toString() + "\n");
+        }
     }
 }

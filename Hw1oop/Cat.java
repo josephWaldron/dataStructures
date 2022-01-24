@@ -51,4 +51,8 @@ public class Cat {
     boolean play(String toy){
         return false;
     }
+    @Override
+    public String toString() {
+        return "Name: " + this.name + "\nAge: " + this.age + "\nColor: " + this.color + "\nType: " + this.type;
+    }
 }
