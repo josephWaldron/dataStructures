@@ -2,7 +2,7 @@
 * Kean University
 * Spring 2022
 * Course: CPS*2232 – Data Structures
-* Author: Your Full Name, course, section
+* Author: Joseph Waldron, CPS*2232, section 2
 * Homework (or Lab): 1, task 1, 2, 3, ….
 * Program Description:
 *************************************************************************/
