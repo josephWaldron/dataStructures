@@ -13,6 +13,6 @@ import Hw1oop.Cat.Color;
 public class TestCat {
     public static void main(String[] args) {
         Cat prince = new Cat("Prince", 0.8, Color.LAVENDER, "domestic");
-        Cat betty = new Cat("Betty");
+        Cat betty = new Cat("Betty", 0.25, Color.RED, "domestic");
     }
 }

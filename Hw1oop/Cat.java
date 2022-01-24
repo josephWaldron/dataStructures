@@ -13,7 +13,7 @@ public class Cat {
     public enum Color{
         WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
     }
-    
+
     //data fields
     String name;
     double age;     //in years
@@ -22,19 +22,24 @@ public class Cat {
     static int numberOfCats;
 
     //constructors
-    public Cat(){}
+    public Cat(){
+        numberOfCats++;
+    }
     public Cat(String name){
         this.name = name;
+        numberOfCats++;
     }
     public Cat(String name, String breed){
         this.name = name;
         System.out.println(breed);
+        numberOfCats++;
     }
     public Cat(String name, double age, Color color, String type){
         this.name = name;
         this.age = age;
         this.color = color;
         this.type = type;
+        numberOfCats++;
     }
     //methods
     public static int getNumberOfCats() {
