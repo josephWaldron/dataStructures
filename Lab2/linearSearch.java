@@ -81,7 +81,7 @@ public class linearSearch {
       for(int i = 0; i < N; i++){  //worst case
         //generate random numbers from -100 to 100
         list[i] = (int)(Math.random() * 100 * (Math.random() > 0.5 ? 1 : -1));
-        System.out.println(list[i]);
+        // System.out.println(list[i]);
       }
       long begin, end, time;
       begin = System.nanoTime();
