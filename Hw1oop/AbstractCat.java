@@ -1,19 +1,25 @@
 package Hw1oop;
 
 
-public class AbstractCat {
+public abstract class AbstractCat {
     public enum Color{
         WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
     }
 
+    
     //data fields       private is encapsulated
     private String name;
     private double age;     //in years
     private Color color;
     private String type;    //domestic / feral
     static int numberOfCats;
+    private DOB birthDate;//for immutable
 
     //constructors
+    public DOB getBirthDate(){
+        return birthDate;
+    }
+
     public AbstractCat(){
         numberOfCats++;
     }
@@ -26,11 +32,12 @@ public class AbstractCat {
         System.out.println(breed);
         numberOfCats++;
     }
-    public AbstractCat(String name, double age, Color color, String type){
+    public AbstractCat(String name, double age, Color color, String type, DOB birthDate){
         this.name = name;
         this.age = age;
         this.color = color;
         this.type = type;
+        this.birthDate = birthDate;
         numberOfCats++;
     }
     //getters and setters
@@ -61,7 +68,7 @@ public class AbstractCat {
     public void setType(String type) {
         this.type = type;
     }
-    
+
     //methods
     String eat(){
         return "favorite food";
@@ -69,8 +76,9 @@ public class AbstractCat {
     boolean play(String toy){
         return false;
     }
+    public abstract boolean useLitterBox();
     @Override
     public String toString() {
-        return "Name: " + this.name + "\nAge: " + this.age + "\nColor: " + this.color + "\nType: " + this.type;
+        return "Name: " + this.name + "\nAge: " + this.age + "\nColor: " + this.color + "\nType: " + this.type + "\nbirthDate: " + this.birthDate;
     }
 }
