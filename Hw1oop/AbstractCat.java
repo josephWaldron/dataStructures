@@ -7,10 +7,10 @@ public class AbstractCat {
     }
 
     //data fields
-    String name;
-    double age;     //in years
-    Color color;
-    String type;    //domestic / feral
+    private String name;
+    private double age;     //in years
+    private Color color;
+    private String type;    //domestic / feral
     static int numberOfCats;
 
     //constructors
