@@ -6,7 +6,7 @@ public class AbstractCat {
         WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
     }
 
-    //data fields
+    //data fields       private is encapsulated
     private String name;
     private double age;     //in years
     private Color color;
@@ -33,10 +33,36 @@ public class AbstractCat {
         this.type = type;
         numberOfCats++;
     }
-    //methods
+    //getters and setters
     public static int getNumberOfCats() {
         return numberOfCats;
     }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getAge() {
+        return age;
+    }
+    public void setAge(double age) {
+        this.age = age;
+    }
+    public Color getColor() {
+        return color;
+    }
+    public void setColor(Color color) {
+        this.color = color;
+    }
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    //methods
     String eat(){
         return "favorite food";
     }
