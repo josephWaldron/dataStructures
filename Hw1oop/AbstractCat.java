@@ -1,7 +1,7 @@
 package Hw1oop;
 
 
-public abstract class AbstractCat {
+public abstract class AbstractCat implements Pet{
     public enum Color{
         WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
     }
