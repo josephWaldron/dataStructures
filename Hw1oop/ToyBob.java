@@ -27,6 +27,7 @@ public class ToyBob extends AbstractCat{
         boolean nailsTrimmed = false;
         return (nailsTrimmed)? true : false;
     }
+    
     @Override
     public boolean areFriendsWith(Pet p) {
         return (this instanceof AbstractCat && p instanceof AbstractCat)? true : false; //checks and see if both are cats
