@@ -9,17 +9,14 @@ public class linearSearch {
     }
     return -1;
   }
-public class recursiveLinearSearch{
-  public static int recursiveLinearSearch1(int list[], int key, int index){
-    if(list[index] == key){
-      return index;
-    }
-    else if(index + 1 < list.length)return recursiveLinearSearch1(list, key, index + 1);
-    else return -1;
-  }
-}
 
-  
+public static int recursiveLinearSearch1(int list[], int key, int index){   //added index variable
+  if(list[index] == key){   //checks if list[index] is = to the key
+    return index;
+  }
+  else if(index + 1 < list.length)return recursiveLinearSearch1(list, key, index + 1);    //if not check if it will in bounds add 1 to the index and run again
+  else return -1;   //if key is not found
+  }
   public static void main(String[] args) {
     final int N[] = {10, 100, 1000, 10000, 100000, 1000000, 10000000};
     final int KEY = 150;
@@ -73,19 +70,19 @@ public class recursiveLinearSearch{
           System.out.println();
       }
    }
-  public static long bestCase(int N, int KEY){
+  public static long bestCase(int N, int KEY){    //best case
     int[] list = new int[N];
     list[0] = 150; //best case
     long begin, end, time;
     begin = System.nanoTime();
   //Start timer
-    System.out.println(linearSearch1(list, KEY));
+    System.out.println(recursiveLinearSearch1(list, KEY, 0));
     end = System.nanoTime();
     time = end - begin;
     System.out.println("It took " + time + " nanoseconds to run linear search with the key " + KEY + " on an array with " + N + " elements.");
     return time;
   }
-  public static long worstCase(int N, int KEY){
+  public static long worstCase(int N, int KEY){   //worst case
     int[] list = new int[N];
     for(int i = 0; i < N; i++){  //worst case
       //generate random numbers from -100 to 100
@@ -95,7 +92,7 @@ public class recursiveLinearSearch{
     long begin, end, time;
     begin = System.nanoTime();
     //Start timer
-    System.out.println(linearSearch1(list, KEY));
+    System.out.println(recursiveLinearSearch1(list, KEY, 0));
     end = System.nanoTime();
     time = end - begin;
     System.out.println("It took " + time + " nanoseconds to run linear search with the key " + KEY + " on an array with " + N + " elements.");
