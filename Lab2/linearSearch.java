@@ -9,6 +9,7 @@ public class linearSearch {
       }
       return -1;
     }
+
   
     public static void main(String[] args) {
       final int N[] = {10, 100, 1000, 10000, 100000, 1000000, 10000000};
