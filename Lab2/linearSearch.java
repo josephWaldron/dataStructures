@@ -9,6 +9,15 @@ public class linearSearch {
       }
       return -1;
     }
+public class recursiveLinearSearch{
+  public static int recursiveLinearSearch1(int list[], int key, int index){
+    if(list[index] == key){
+        return index;
+    }
+    else if(index + 1 < list.length)return recursiveLinearSearch1(list, key, index + 1);
+    else return -1;
+}
+}
 
   
     public static void main(String[] args) {
