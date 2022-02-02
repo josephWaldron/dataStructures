@@ -1,7 +1,5 @@
 package Lab2;
 
-import java.util.List;
-
 public class linearSearch {
   /** The method for finding a key in the list */
   public static int linearSearch1(int[] list, int key) {
