@@ -65,19 +65,54 @@ public static int recursiveLinearSearch1(int list[], int key, int index){   //ad
         list[i] = currentMin;
       }
     }
+    System.out.println("selection sorting complete");
   }
+  public static int minIndex(int list[], int i, int j)
+    {
+        if (i == j)
+            return i;
+      
+        // Find minimum of remaining elements
+        int k = minIndex(list, i + 1, j);
+      
+        // Return minimum of current and remaining.
+        return (list[i] < list[k])? i : k;
+    }
+      
+    // Recursive selection sort. n is size of a[] and index
+    // is index of starting element.
+    public static void recurSelectionSort(int list[], int length, int startingIndex)
+    {
+          
+        // Return when starting and size are same
+        if (startingIndex == length)
+           return;
+      
+        // calling minimum index function for minimum index
+        int k = minIndex(list, startingIndex, length-1);
+      
+        // Swapping when index nd minimum index are not same
+        if (k != startingIndex){
+           // swap
+           int temp = list[k];
+           list[k] = list[startingIndex];
+           list[startingIndex] = temp;
+        }
+        // Recursively calling selection sort function
+        recurSelectionSort(list, length, startingIndex + 1);
+    }
   public static void main(String[] args) {
-    final int N[] = {10, 100, 1000, 10000, 100000, 1000000, 10000000};
+    final int N[] = {10, 100, 1000};
     final int KEY = 150;
     String matrix[][] = new String[4][8];
     matrix[0][0] = "N";   //populating results matrix
     matrix[0][1] = String.valueOf(N[0]);
     matrix[0][2] = String.valueOf(N[1]);
     matrix[0][3] = String.valueOf(N[2]);
-    matrix[0][4] = String.valueOf(N[3]);
-    matrix[0][5] = String.valueOf(N[4]);
-    matrix[0][6] = String.valueOf(N[5]);
-    matrix[0][7] = String.valueOf(N[6]);
+    //matrix[0][4] = String.valueOf(N[3]);
+    //matrix[0][5] = String.valueOf(N[4]);
+    //matrix[0][6] = String.valueOf(N[5]);
+    //matrix[0][7] = String.valueOf(N[6]);
     matrix[1][0] = "Worst";
     matrix[2][0] = "Best";
     matrix[3][0] = "Average";
@@ -90,18 +125,18 @@ public static int recursiveLinearSearch1(int list[], int key, int index){   //ad
     matrix[1][1] = String.valueOf(worstResults[0]);//populating results matrix
     matrix[1][2] = String.valueOf(worstResults[1]);
     matrix[1][3] = String.valueOf(worstResults[2]);
-    matrix[1][4] = String.valueOf(worstResults[3]);
-    matrix[1][5] = String.valueOf(worstResults[4]);
-    matrix[1][6] = String.valueOf(worstResults[5]);
-    matrix[1][7] = String.valueOf(worstResults[6]);
+    //matrix[1][4] = String.valueOf(worstResults[3]);
+    //matrix[1][5] = String.valueOf(worstResults[4]);
+    //matrix[1][6] = String.valueOf(worstResults[5]);
+    //matrix[1][7] = String.valueOf(worstResults[6]);
 
     matrix[2][1] = String.valueOf(bestResults[0]);//populating results matrix
     matrix[2][2] = String.valueOf(bestResults[1]);
     matrix[2][3] = String.valueOf(bestResults[2]);
-    matrix[2][4] = String.valueOf(bestResults[3]);
-    matrix[2][5] = String.valueOf(bestResults[4]);
-    matrix[2][6] = String.valueOf(bestResults[5]);
-    matrix[2][7] = String.valueOf(bestResults[6]);
+    //matrix[2][4] = String.valueOf(bestResults[3]);
+    //matrix[2][5] = String.valueOf(bestResults[4]);
+    //matrix[2][6] = String.valueOf(bestResults[5]);
+    //matrix[2][7] = String.valueOf(bestResults[6]);
 
     matrix[3][1] = String.valueOf(average(bestResults[0], worstResults[0]));//populating results matrix
     matrix[3][2] = String.valueOf(average(bestResults[1], worstResults[1]));
@@ -118,6 +153,7 @@ public static int recursiveLinearSearch1(int list[], int key, int index){   //ad
           }
           System.out.println();
       }
+      System.out.println("complete");
    }
   public static long bestCase(int N, int KEY){    //best case
     int[] list = new int[N];
@@ -128,10 +164,11 @@ public static int recursiveLinearSearch1(int list[], int key, int index){   //ad
     long begin, end, time;
     begin = System.nanoTime();
   //Start timer
-    System.out.println(binarySearch(list, KEY));
+    //System.out.println(binarySearch(list, KEY));
+    recurSelectionSort(list, list.length, 0);
     end = System.nanoTime();
     time = end - begin;
-    System.out.println("It took " + time + " nanoseconds to run linear search with the key " + KEY + " on an array with " + N + " elements.");
+    System.out.println("It took " + time + " nanoseconds to run recursive selection sort of "  + N + " elements.");
     return time;
   }
   public static long worstCase(int N, int KEY){   //worst case
@@ -144,12 +181,13 @@ public static int recursiveLinearSearch1(int list[], int key, int index){   //ad
     long begin, end, time;
     System.out.println("sorting");
     begin = System.nanoTime();
-    list = sort(list);
+    // list = sort(list);
     //Start timer
-    System.out.println(binarySearch(list, KEY));
+    //System.out.println(binarySearch(list, KEY));
+    recurSelectionSort(list, list.length, 0);
     end = System.nanoTime();
     time = end - begin;
-    System.out.println("It took " + time + " nanoseconds to run linear search with the key " + KEY + " on an array with " + N + " elements.");
+    System.out.println("It took " + time + " nanoseconds to run recursive selection sort of "  + N + " elements.");
     return time;
   }
   public static long average(long case1, long case2){
