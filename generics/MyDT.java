@@ -6,18 +6,18 @@ public class MyDT<T> {
     public MyDT(){
         super();
     }
-    public MyDT(Object object){
+    public MyDT(T t){
         super();
-        this.object = object;
+        this.t = t;
     }
-    public Object getObject() {
-        return object;
+    public T getT() {
+        return t;
     }
-    public void setObject(Object object) {
-        this.object = object;
+    public void setT(T t) {
+        this.t = t;
     }
     @Override
     public String toString() {
-        return "MyDt [object= " + object + " ,getObject()=" + getObject() + ", getClass()= " + getClass() + ", hashCode()" + hashCode() + ", toString()=" + super.toString() + "]";
+        return "MyDt [object= " + object + " ,getObject()=" + getT() + ", getClass()= " + getClass() + ", hashCode()" + hashCode() + ", toString()=" + super.toString() + "]";
     }
 }

@@ -2,8 +2,13 @@ package generics;
 
 public class testDT {
     public static void main(String[] args) {
-        MyDT first = new MyDT();
-        first.setObject(5);
-        int num = first.getObject();
+        MyDT <Integer>first = new MyDT<>();
+        first.setT(5);
+        int num = first.getT();
+        Object num2 = first.getT();
+
+        MyDT<String> second = new MyDT<>();
+        second.setT("Hello");
+        String num3 = second.getT();
     }
 }
