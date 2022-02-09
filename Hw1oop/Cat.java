@@ -8,8 +8,7 @@
 *************************************************************************/
 package Hw1oop;
 
-
-public class Cat {
+public class Cat implements Comparable<Cat>{
     public enum Color{
         WHITE, CREAM, FAWN, CINNAMON, CHOCOLATE, RED, LILAC, BLUE, BLACK, LAVENDER
     }
@@ -51,8 +50,15 @@ public class Cat {
     boolean play(String toy){
         return false;
     }
+    public double getAge() {
+        return age;
+    }
     @Override
     public String toString() {
         return "Name: " + this.name + "\nAge: " + this.age + "\nColor: " + this.color + "\nType: " + this.type;
+    }
+    @Override
+    public int compareTo(Cat c1) {
+        return c1.getAge() < this.age ? 1 : c1.getAge() == this.age ? 0 : -1;
     }
 }
