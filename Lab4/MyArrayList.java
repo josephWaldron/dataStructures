@@ -191,5 +191,32 @@ public class MyArrayList<E> implements MyList<E> {
             myArrayList.remove(myArrayList.size() - 1);
             System.out.println("List after removal: " + myArrayList);
         }
+
+        //find times for each function
+        var myArrayListTimed = new MyArrayList<Integer>();
+        long begin, end, time;
+        begin = System.nanoTime();
+        //Start timer
+        myArrayListTimed.add(1);
+        end = System.nanoTime();
+        time = end - begin;
+        System.out.println(myArrayListTimed);
+        System.out.println("Time to add one element= " + time);
+
+        begin = System.nanoTime();
+        //Start timer
+        myArrayListTimed.add(0, 10);
+        end = System.nanoTime();
+        time = end - begin;
+        System.out.println(myArrayListTimed);
+        System.out.println("Time to add element to the front= " + time);
+
+        begin = System.nanoTime();
+        //Start timer
+        myArrayListTimed.remove(myArrayListTimed.size() - 1);
+        end = System.nanoTime();
+        time = end - begin;
+        System.out.println(myArrayListTimed);
+        System.out.println("Time to delete one element= " + time);
     }
   }
