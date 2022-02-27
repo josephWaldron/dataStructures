@@ -193,7 +193,7 @@ public class MyArrayList<E> implements MyList<E> {
         }
 
         //find times for each function
-        var myArrayListTimed = new MyArrayList<Integer>();
+        var myArrayListTimed = new MyArrayList<Integer>();    //add one element
         long begin, end, time;
         begin = System.nanoTime();
         //Start timer
@@ -203,7 +203,7 @@ public class MyArrayList<E> implements MyList<E> {
         System.out.println(myArrayListTimed);
         System.out.println("Time to add one element= " + time);
 
-        begin = System.nanoTime();
+        begin = System.nanoTime();    //add one element in front
         //Start timer
         myArrayListTimed.add(0, 10);
         end = System.nanoTime();
@@ -211,7 +211,7 @@ public class MyArrayList<E> implements MyList<E> {
         System.out.println(myArrayListTimed);
         System.out.println("Time to add element to the front= " + time);
 
-        begin = System.nanoTime();
+        begin = System.nanoTime();  //delete element
         //Start timer
         myArrayListTimed.remove(myArrayListTimed.size() - 1);
         end = System.nanoTime();
