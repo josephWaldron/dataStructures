@@ -1,4 +1,4 @@
-package generics.Unit5As3;
+package generics.Lab3.Unit5As3;
 
 public abstract class Product implements Comparable, Saleable{
     private double price;
